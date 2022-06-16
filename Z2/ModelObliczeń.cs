@@ -13,7 +13,11 @@ namespace NET_ININ4_PR2._2_z3
         {
             ["x²"] = "kwadrat",
             ["√x"] = "√",
-            ["1/x"] = "odwrotność"
+            ["1/x"] = "odwrotność",
+            ["fl"] = "wDół",
+            ["up"] = "wGórę",
+            ["!"] = "silnia",
+            ["log10"] = "log10"
         };
         private string buforIO = "0";
         private double?
@@ -111,8 +115,32 @@ namespace NET_ININ4_PR2._2_z3
             lewyOperand = double.Parse(buforIO);
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("BuforDziałania"));
 
-            if (operacja == "x²")
-                lewyOperand = lewyOperand * lewyOperand;
+            switch (operacja)
+            {
+                case "x²":
+                    lewyOperand *= lewyOperand;
+                    break;
+                case "1/x":
+                    lewyOperand = 1 / lewyOperand;
+                    break;
+                case "√x":
+                    lewyOperand = Math.Sqrt((double)lewyOperand);
+                    break;
+                case "fl":
+                    lewyOperand = Math.Floor((double)lewyOperand);
+                    break;
+                case "up":
+                    lewyOperand = Math.Ceiling((double)lewyOperand);
+                    break;
+                case "!":
+                    lewyOperand = factorial((double)lewyOperand);
+                    break;
+                case "log10":
+                    lewyOperand = Math.Log10((double)lewyOperand);
+                    break;
+                default:
+                    throw new Exception("Operacja nieobsługiwana");
+            }
 
             BuforIO = lewyOperand.ToString();
             operacjaJednoargumentowa = default;
@@ -184,6 +212,15 @@ namespace NET_ININ4_PR2._2_z3
 
             BuforIO = lewyOperand.ToString();
             flagaDziałania = true;
+        }
+
+        private int factorial(double operand)
+        {
+            int value = (int)Math.Round(operand);
+            if (value < 1)
+                return 1;
+            else
+                return value * factorial(value - 1);
         }
     }
 }
