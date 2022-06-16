@@ -158,8 +158,29 @@ namespace NET_ININ4_PR2._2_z3
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("BuforDziałania"));
 
-            if (operacja == "+")
-                lewyOperand = lewyOperand + prawyOperand;
+            switch (operacja)
+            {
+                case "+":
+                    lewyOperand += prawyOperand;
+                    break;
+                case "-":
+                    lewyOperand -= prawyOperand;
+                    break;
+                case "×":
+                    lewyOperand *= prawyOperand;
+                    break;
+                case "÷":
+                    lewyOperand /= prawyOperand;
+                    break;
+                case "mod":
+                    lewyOperand %= prawyOperand;
+                    break;
+                case "^":
+                    lewyOperand = Math.Pow((double)lewyOperand, (double)prawyOperand);
+                    break;
+                default:
+                    throw new Exception("Operacja nieobsługiwana");
+            }
 
             BuforIO = lewyOperand.ToString();
             flagaDziałania = true;
