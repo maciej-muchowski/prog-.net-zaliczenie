@@ -1,0 +1,44 @@
+﻿<Window x:Class="BindingXML.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BindingXML"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+
+        <ListBox
+            Name="Categories"
+            Grid.ColumnSpan="3"
+            Grid.RowSpan="2"
+            ItemsSource="{Binding Categories}"
+            >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock
+                        Text="{Binding Name}"
+                        />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button
+            Grid.Row="2"
+            Grid.Column="1"
+            Click="ShowCategory"
+            >
+            Szczegóły kategorii
+        </Button>
+    </Grid>
+</Window>
