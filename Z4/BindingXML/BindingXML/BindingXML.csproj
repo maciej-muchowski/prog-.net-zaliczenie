@@ -65,10 +65,10 @@
     <Compile Include="Model\MotorcycleModel.cs" />
     <Compile Include="Model\PlaneModel.cs" />
     <Compile Include="Model\TruckModel.cs" />
-    <Compile Include="Subcategory.xaml.cs">
-      <DependentUpon>Subcategory.xaml</DependentUpon>
+    <Compile Include="Subcategory.cs" />
+    <Compile Include="SubcategoryView.xaml.cs">
+      <DependentUpon>SubcategoryView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SubcategoryModel.cs" />
     <Page Include="CategoryView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -85,7 +85,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Subcategory.xaml">
+    <Page Include="SubcategoryView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

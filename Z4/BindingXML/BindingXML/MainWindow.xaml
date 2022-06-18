@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BindingXML"
         mc:Ignorable="d"
-        Title="MainWindow" Height="300" Width="500">
+        Title="MainWindow" Height="300" Width="600">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="5*"/>
@@ -14,14 +14,14 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="0.5*"/>
         </Grid.ColumnDefinitions>
 
         <ListBox
             Name="Categories"
-            Grid.ColumnSpan="3"
+            Grid.ColumnSpan="1"
             Grid.RowSpan="2"
             ItemsSource="{Binding Categories}"
             >
@@ -33,9 +33,24 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <ListView
+            Grid.Row="0"
+            Grid.Column="1"
+            Grid.RowSpan="2"
+            Grid.ColumnSpan="2"
+            ItemsSource="{Binding Categories}"
+            >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock
+                        Text="{Binding Description}"
+                        TextWrapping="WrapWithOverflow"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
         <Button
             Grid.Row="2"
-            Grid.Column="1"
+            Grid.Column="0"
             Click="ShowCategory"
             >
             Szczegóły kategorii

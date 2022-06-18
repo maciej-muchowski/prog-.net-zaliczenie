@@ -21,7 +21,17 @@ namespace BindingXML
     {
         public CategoryView(Category category)
         {
+            DataContext = category;
             InitializeComponent();
+        }
+
+        private void ShowSubcategory(object sender, RoutedEventArgs e)
+        {
+            ListBox list = (ListBox)this.FindName("Subcategories");
+            Subcategory chosen = (Subcategory)list.SelectedItem;
+
+            if (chosen != null)
+                new SubcategoryView(chosen).Show();
         }
     }
 }

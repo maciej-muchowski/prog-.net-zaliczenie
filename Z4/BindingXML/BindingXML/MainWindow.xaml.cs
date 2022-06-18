@@ -20,7 +20,7 @@ namespace BindingXML
     /// </summary>
     public partial class MainWindow : Window
     {
-        CategoryModel categoryModel = new CategoryModel();
+        CategoryModel categoryModel = CategoryModel.GetCategoryModel();
         public MainWindow()
         {
             DataContext = categoryModel;
