@@ -5,13 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LayoutBinding_Z1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="80
-        0" Width="800">
+        Title="MainWindow" Height="400" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
- 
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -19,14 +18,16 @@
         </Grid.ColumnDefinitions>
         <WrapPanel
             Grid.Row="0"
+            Grid.ColumnSpan="2"
             Background="LightGreen"
             >
-            <Button>
-                
-            </Button>
+            <Button Content="Button" Width="75"/>
+            <Button Content="Button" Width="75"/>
         </WrapPanel>
         <StackPanel
             Grid.Column="1"
+            Grid.Row="1"
+            Grid.RowSpan="2"
             Background="Azure"></StackPanel>
     </Grid>
 </Window>

@@ -4,6 +4,12 @@
              xmlns:local="clr-namespace:LayoutBinding_Z1"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="Label" x:Key="StylDlaLabel">
+            <Setter Property="FontSize" Value="24"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Background" Value="Azure"/>
+        </Style>
     </Application.Resources>
 </Application>

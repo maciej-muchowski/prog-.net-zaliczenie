@@ -20,8 +20,10 @@ namespace BindingDoKlas_Z3
     /// </summary>
     public partial class MainWindow : Window
     {
+        AlbumModel albumModel = new AlbumModel();
         public MainWindow()
         {
+            DataContext = albumModel;
             InitializeComponent();
         }
     }
