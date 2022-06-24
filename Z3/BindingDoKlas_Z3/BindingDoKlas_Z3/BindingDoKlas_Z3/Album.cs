@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,6 +21,9 @@ namespace BindingDoKlas_Z3
         public string Medium { get => medium; set => medium = value; }
         public DateTime ReleaseDate { get => releaseDate; set => releaseDate = value; }
 
+        public string ReleaseDateString { get => ReleaseDate.ToString("d"); set => ReleaseDate = DateTime.Parse(value);
+        }
+
         public Album(string title, string author, string publisher, string medium, DateTime releaseDate)
         {
             this.title = title;
@@ -28,5 +32,7 @@ namespace BindingDoKlas_Z3
             this.medium = medium;
             this.releaseDate = releaseDate;
         }
+
+        public Album() { }
     }
 }

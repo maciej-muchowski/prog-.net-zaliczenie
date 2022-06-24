@@ -26,5 +26,19 @@ namespace BindingDoKlas_Z3
             DataContext = albumModel;
             InitializeComponent();
         }
+
+        private void Add(object sender, RoutedEventArgs e)
+        {
+            new AlbumView(albumModel.NewAlbum()).ShowDialog();
+        }
+
+        private void Edit(object sender, RoutedEventArgs e)
+        {
+            ListBox list = (ListBox)this.FindName("Albums");
+            Album chosen = (Album)list.SelectedItem;
+
+            if (chosen != null)
+                new AlbumView(chosen).ShowDialog();
+        }
     }
 }

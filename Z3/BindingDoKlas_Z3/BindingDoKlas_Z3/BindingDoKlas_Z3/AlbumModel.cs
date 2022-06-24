@@ -17,5 +17,13 @@ namespace BindingDoKlas_Z3
             Albums.Add(new Album("The Black Album", "Metallica", "Elektra", "CD", new DateTime(year: 1991, month: 8, day: 12)));
             Albums.Add(new Album("Hipertrofia", "Coma", "Sony BMG Music Entertainment Poland", "CD", new DateTime(year: 2008, month: 11, day: 10)));
         }
+
+        internal Album NewAlbum()
+        {
+            Album album = new Album();
+            Albums.Add(album);
+            
+            return album;
+        }
     }
 }
