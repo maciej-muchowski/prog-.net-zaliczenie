@@ -13,7 +13,9 @@ namespace BindingDoKlas_Z3
 
         public AlbumModel()
         {
-            Albums.Add(new Album("Appettite for Destruction", "Guns N' Roses", "Geffen Records", "CD", new DateTime(year: 1987, month: 7, day: 21)));
+            Albums.Add(new Album("Appetite for Destruction", "Guns N' Roses", "Geffen Records", "CD", new DateTime(year: 1987, month: 7, day: 21)));
+            Albums.Add(new Album("The Black Album", "Metallica", "Elektra", "CD", new DateTime(year: 1991, month: 8, day: 12)));
+            Albums.Add(new Album("Hipertrofia", "Coma", "Sony BMG Music Entertainment Poland", "CD", new DateTime(year: 2008, month: 11, day: 10)));
         }
     }
 }
