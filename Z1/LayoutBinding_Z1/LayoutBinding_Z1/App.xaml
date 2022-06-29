@@ -4,12 +4,57 @@
              xmlns:local="clr-namespace:LayoutBinding_Z1"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <Style TargetType="Label" x:Key="StylDlaLabel">
+        <SolidColorBrush x:Key="Button.Background" Color="#4EF"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#3EC"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#2AA"/>
+        <SolidColorBrush x:Key="TextColor" Color="#900"/>
+        <SolidColorBrush x:Key="ButtonColor" Color="#EEE"/>
+        <Style TargetType="Label">
             <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <Style
+            TargetType="Label"
+            x:Key="SpecialLabel"
+            BasedOn="{StaticResource {x:Type Label}}"
+            >
+            <Setter Property="Foreground" Value="{DynamicResource TextColor}"/>
         </Style>
         <Style TargetType="Button">
             <Setter Property="FontSize" Value="20"/>
-            <Setter Property="Background" Value="Azure"/>
+            <Setter Property="Background" Value="{DynamicResource ButtonColor}"/>
+        </Style>
+        <Style
+            x:Key="SpecialButton"
+            TargetType="{x:Type Button}"
+            >
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Background" Value="{DynamicResource Button.Background}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="2">
+                            <ContentPresenter
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            Margin="{TemplateBinding Padding}"
+                            RecognizesAccessKey="True"
+                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="true">
+                    <Setter Property="Background" Value="{DynamicResource Button.Background}"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Background" Value="{DynamicResource Button.MouseOver.Background}"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="true">
+                    <Setter Property="Background" Value="{DynamicResource Button.Pressed.Background}"/>
+                </Trigger>
+            </Style.Triggers>
         </Style>
     </Application.Resources>
 </Application>
