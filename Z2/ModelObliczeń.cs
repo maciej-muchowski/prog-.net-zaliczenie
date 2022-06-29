@@ -40,7 +40,6 @@ namespace NET_ININ4_PR2._2_z3
         }
         public string BuforDziałania { 
             get {
-                //do korekty
                 if (operacjaJednoargumentowa != null)
                     return $"{nazwaFunkcji[operacjaJednoargumentowa]}({lewyOperand})";
                 return $"{lewyOperand} {operacja} {prawyOperand}";
@@ -88,8 +87,6 @@ namespace NET_ININ4_PR2._2_z3
             if (buforIO == "" || buforIO == "-" || buforIO == "-0")
                 BuforIO = "0";
             else
-                //BuforIO = buforIO;
-                //albo po prostu:
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("BuforIO"));
         }
 
@@ -147,18 +144,29 @@ namespace NET_ININ4_PR2._2_z3
         }
         internal void DziałanieDwuargumentowe(string operacja)
         {
-            if(lewyOperand == null)
+            this.operacja = operacja;
+
+            if (lewyOperand == null)
             {
                 lewyOperand = double.Parse(buforIO);
-                this.operacja = operacja;
+                flagaDziałania = true;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("BuforDziałania"));
+            }
+            else if (this.operacja == null)
+            {
+                lewyOperand = double.Parse(buforIO);
                 flagaDziałania = true;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("BuforDziałania"));
             }
             else
             {
-                if(!flagaDziałania)
+                if (!flagaDziałania)
+                {
                     prawyOperand = double.Parse(buforIO);
-                WykonajZbuforowaneDziałanie();
+                    flagaDziałania = true;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("BuforDziałania"));
+                    WykonajZbuforowaneDziałanie();
+                }
             }
         }
 
