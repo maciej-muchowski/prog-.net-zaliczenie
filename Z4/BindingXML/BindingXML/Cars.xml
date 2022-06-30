@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Cars>
+	<Type>
+		<Name>Muscle cars</Name>
+		<Description>American-made two-door sports coupes with powerful gas powered engines designed for high-performance driving.</Description>
+		<Manufacturer>
+			<Name>Dodge</Name>
+			<Country>USA</Country>
+			<Year>1900</Year>
+			<Model>
+				<Name>Charger I</Name>
+				<Engine>
+					<EngineCapacity>7.2</EngineCapacity>
+					<EnginePower>375KM</EnginePower>
+				</Engine>
+			</Model>
+			<Model>
+				<Name>Charger II</Name>
+				<Engine>
+					<EngineCapacity>7.2</EngineCapacity>
+					<EnginePower>380KM</EnginePower>
+				</Engine>
+			</Model>
+			<Model>
+				<Name>Charger III</Name>
+				<Engine>
+					<EngineCapacity>7.2</EngineCapacity>
+					<EnginePower>309KM</EnginePower>
+				</Engine>
+			</Model>
+		</Manufacturer>
+		<Manufacturer>
+			<Name>Ford</Name>
+			<Country>USA</Country>
+			<Year>1903</Year>
+			<Model>
+				<Name>Mustang I</Name>
+				<Engine>
+					<EngineCapacity>7.0</EngineCapacity>
+					<EnginePower>375KM</EnginePower>
+				</Engine>
+			</Model>
+			<Model>
+				<Name>Mustang II</Name>
+				<Engine>
+					<EngineCapacity>5.0</EngineCapacity>
+					<EnginePower>235KM</EnginePower>
+				</Engine>
+			</Model>
+		</Manufacturer>
+	</Type>
+	<Type>
+		<Name>D Segment</Name>
+		<Description>The D-segment is the 4th category of the European segments for passenger cars, and is described as "large cars".</Description>
+		<Manufacturer>
+			<Name>Ford</Name>
+			<Country>USA</Country>
+			<Year>1903</Year>
+			<Model>
+				<Name>Mondeo IV</Name>
+				<Engine>
+					<EngineCapacity>2.0</EngineCapacity>
+					<EnginePower>163KM</EnginePower>
+				</Engine>
+			</Model>
+			<Model>
+				<Name>Mondeo IV</Name>
+				<Engine>
+					<EngineCapacity>2.0</EngineCapacity>
+					<EnginePower>140KM</EnginePower>
+				</Engine>
+			</Model>
+		</Manufacturer>
+		<Manufacturer>
+			<Name>BMW</Name>
+			<Country>Germany</Country>
+			<Year>1916</Year>
+			<Model>
+				<Name>E90</Name>
+				<Engine>
+					<EngineCapacity>2.0</EngineCapacity>
+					<EnginePower>161KM</EnginePower>
+				</Engine>
+			</Model>
+			<Model>
+				<Name>E46</Name>
+				<Engine>
+					<EngineCapacity>3.0</EngineCapacity>
+					<EnginePower>282KM</EnginePower>
+				</Engine>
+				<Engine>
+					<EngineCapacity>2.5</EngineCapacity>
+					<EnginePower>174KM</EnginePower>
+				</Engine>
+			</Model>
+		</Manufacturer>
+	</Type>
+</Cars>

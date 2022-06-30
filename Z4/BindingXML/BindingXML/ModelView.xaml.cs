@@ -15,13 +15,15 @@ using System.Windows.Shapes;
 namespace BindingXML
 {
     /// <summary>
-    /// Logika interakcji dla klasy SubcategoryView.xaml
+    /// Logika interakcji dla klasy ModelView.xaml
     /// </summary>
-    public partial class SubcategoryView : Window
+    public partial class ModelView : Window
     {
-        public SubcategoryView(Subcategory subcategory)
+        public ModelView(System.Xml.XmlElement details)
         {
+            DataContext = details;
             InitializeComponent();
         }
+
     }
 }

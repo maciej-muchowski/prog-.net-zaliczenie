@@ -10,26 +10,26 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace BindingXML
 {
     /// <summary>
-    /// Logika interakcji dla klasy MainWindow.xaml
+    /// Logika interakcji dla klasy ManufacturerView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ManufacturerView : Window
     {
-        public MainWindow()
+        public ManufacturerView(System.Xml.XmlElement model)
         {
+            DataContext = model;
             InitializeComponent();
         }
 
-        private void ShowType(object sender, RoutedEventArgs e)
+        private void ShowDetails(object sender, RoutedEventArgs e)
         {
             FrameworkElement parent = (FrameworkElement)((FrameworkElement)sender).Parent;
-            ListBox list = (ListBox)parent.FindName("Cars");
-            new TypeView((System.Xml.XmlElement)list.SelectedItem).Show();
+            ListBox list = (ListBox)parent.FindName("Model");
+            new ModelView((System.Xml.XmlElement)list.SelectedItem).Show();
         }
     }
 }

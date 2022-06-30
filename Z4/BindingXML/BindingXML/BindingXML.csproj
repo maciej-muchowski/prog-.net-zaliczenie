@@ -55,24 +55,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Category.cs" />
-    <Compile Include="CategoryModel.cs" />
-    <Compile Include="CategoryView.xaml.cs">
-      <DependentUpon>CategoryView.xaml</DependentUpon>
+    <Compile Include="ManufacturerView.xaml.cs">
+      <DependentUpon>ManufacturerView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model\DataFactory.cs" />
-    <Compile Include="Model\DataModel.cs" />
-    <Compile Include="Model\MotorcycleModel.cs" />
-    <Compile Include="Model\PlaneModel.cs" />
-    <Compile Include="Model\TruckModel.cs" />
-    <Compile Include="Subcategory.cs" />
-    <Compile Include="SubcategoryView.xaml.cs">
-      <DependentUpon>SubcategoryView.xaml</DependentUpon>
+    <Compile Include="ModelView.xaml.cs">
+      <DependentUpon>ModelView.xaml</DependentUpon>
     </Compile>
-    <Page Include="CategoryView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <Compile Include="TypeView.xaml.cs">
+      <DependentUpon>TypeView.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -85,7 +76,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="SubcategoryView.xaml">
+    <Page Include="ManufacturerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ModelView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TypeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -108,7 +107,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Model\CarModel.cs" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -116,6 +114,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Cars.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

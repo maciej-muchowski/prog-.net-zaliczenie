@@ -1,40 +1,44 @@
-﻿<Window x:Class="BindingXML.MainWindow"
+﻿<Window x:Class="BindingXML.TypeView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BindingXML"
         mc:Ignorable="d"
-        Title="MainWindow" Height="300" Width="600">
+        Title="TypeView" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
-
         <ListBox
-            Name="Cars"
-            DataContext="{DynamicResource CarsData}"
-            ItemsSource="{Binding XPath=Type}"
+            Name="Manufacturer"
+            ItemsSource="{Binding XPath=Manufacturer}"
             >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="100"/>
-                            <ColumnDefinition/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition />
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="{Binding XPath=Name}"/>
                         <TextBlock 
                             Grid.Column="1"
-						    Text="{Binding XPath=Description}"
+						    Text="{Binding XPath=Country}"
+					       />
+                        <TextBlock 
+                            Grid.Column="2"
+						    Text="{Binding XPath=Year}"
 					       />
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+
         <Button
-            Grid.Row="1" Click="ShowType"
-            >Show Manufacturers</Button>
+            Grid.Row="1" Click="ShowModels"
+            >Show Models</Button>
     </Grid>
 </Window>

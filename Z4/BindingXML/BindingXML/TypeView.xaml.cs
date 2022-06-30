@@ -15,23 +15,21 @@ using System.Windows.Shapes;
 namespace BindingXML
 {
     /// <summary>
-    /// Logika interakcji dla klasy CategoryView.xaml
+    /// Logika interakcji dla klasy TypeView.xaml
     /// </summary>
-    public partial class CategoryView : Window
+    public partial class TypeView : Window
     {
-        public CategoryView(Category category)
+        public TypeView(System.Xml.XmlElement type)
         {
-            DataContext = category;
+            DataContext = type;
             InitializeComponent();
         }
 
-        private void ShowSubcategory(object sender, RoutedEventArgs e)
+        private void ShowModels(object sender, RoutedEventArgs e)
         {
-            ListBox list = (ListBox)this.FindName("Subcategories");
-            Subcategory chosen = (Subcategory)list.SelectedItem;
-
-            if (chosen != null)
-                new SubcategoryView(chosen).Show();
+            FrameworkElement parent = (FrameworkElement)((FrameworkElement)sender).Parent;
+            ListBox list = (ListBox)parent.FindName("Manufacturer");
+            new ManufacturerView((System.Xml.XmlElement)list.SelectedItem).Show();
         }
     }
 }
