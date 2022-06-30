@@ -62,12 +62,13 @@
 					<EngineCapacity>2.0</EngineCapacity>
 					<EnginePower>163KM</EnginePower>
 				</Engine>
-			</Model>
-			<Model>
-				<Name>Mondeo IV</Name>
 				<Engine>
 					<EngineCapacity>2.0</EngineCapacity>
 					<EnginePower>140KM</EnginePower>
+				</Engine>
+				<Engine>
+					<EngineCapacity>2.5T</EngineCapacity>
+					<EnginePower>220KM</EnginePower>
 				</Engine>
 			</Model>
 		</Manufacturer>
